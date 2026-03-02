@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from extension_classifier import FileClassifier
 from files_move import FileMover
 from log_storage import LogManager
+from folder_menu import FolderMenu
 
 #This class is responsible for clearing the file path from symbols and finding the whole path in linux like systems with ~ symbol
 #and also validate that the path exists and is a directory. 
@@ -47,10 +48,16 @@ class FolderScanner:
 #it takes the folder path and the depth of the search and prints the results 
 class App:
     def run(self) -> None:
-        folder_input = input("Provide Folder Path: ")
+        menu = FolderMenu()
+        selected = menu.prompt_folder()
+        if selected is None:
+            print("Bye!")
+            return
+
+        folder = FolderPath(str(selected))
         recursive = input("Should it scan subfolders too? (y/n): ").strip().lower() == "y"
 
-        folder = FolderPath(folder_input)
+        folder = FolderPath(str(selected))
         scanner = FolderScanner(folder, recursive=recursive)
         classifier = FileClassifier()
         log_manager = LogManager(Path("Logs") / "moves_logs.log")
