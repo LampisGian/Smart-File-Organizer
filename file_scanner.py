@@ -1,5 +1,6 @@
 from pathlib import Path
 from dataclasses import dataclass
+from extension_classifier import FileClassifier
 
 #This class is responsible for clearing the file path from symbols and finding the whole path in linux like systems with ~ symbol
 #and also validate that the path exists and is a directory. 
@@ -34,32 +35,37 @@ class FolderScanner:
         self.folder.validate()
 
         if self.recursive:
-            files = [p for p in self.folder.path.rglob("*") if p.is_file()]
+            files = [p for p in self.folder.path.rglob("*") if p.is_file()] #Scanning subfolders too
         else:
-            files = [p for p in self.folder.path.iterdir() if p.is_file()]
+            files = [p for p in self.folder.path.iterdir() if p.is_file()] #Scanning only the current folder
 
         return ScannerResults(folder=self.folder.path, files=files)
 
-'''
+#This is the main application class that runs the program 
+#it takes the folder path and the depth of the search and prints the results 
 class App:
     def run(self) -> None:
-        folder_input = input("Δώσε path φακέλου: ")
-        recursive = input("Να σκανάρει και υποφακέλους; (y/n): ").strip().lower() == "y"
+        folder_input = input("Provide Folder Path: ")
+        recursive = input("Should it scan subfolders too? (y/n): ").strip().lower() == "y"
 
         folder = FolderPath(folder_input)
         scanner = FolderScanner(folder, recursive=recursive)
+        classifier = FileClassifier()
 
         try:
-            result = scanner.scan()
-            print(f"\nΦάκελος: {result.folder}")
-            print(f"Βρέθηκαν {result.count} αρχεία:\n")
-            for f in result.files:
-                print(f"- {f.name} | ext={f.suffix}")
+            result = scanner.scan()          
+            files = result.files if hasattr(result, "files") else result
+            grouped = classifier.group(files)
+
+            print("\n=== Classification ===")
+            for category, items in grouped.items():
+                print(f"\n{category} ({len(items)}):")
+                for f in items:
+                    print(f"  - {f.name}")
 
         except Exception as e:
-            print("Σφάλμα:", e)
+            print("Error:", e)
 
 
 if __name__ == "__main__":
     App().run()
-'''
