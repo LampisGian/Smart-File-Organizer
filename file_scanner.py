@@ -2,6 +2,7 @@ from pathlib import Path
 from dataclasses import dataclass
 from extension_classifier import FileClassifier
 from files_move import FileMover
+from log_storage import LogManager
 
 #This class is responsible for clearing the file path from symbols and finding the whole path in linux like systems with ~ symbol
 #and also validate that the path exists and is a directory. 
@@ -52,12 +53,12 @@ class App:
         folder = FolderPath(folder_input)
         scanner = FolderScanner(folder, recursive=recursive)
         classifier = FileClassifier()
-        
+        log_manager = LogManager(Path("Logs") / "moves_logs.log")
         try:
             result = scanner.scan()          
             files = result.files if hasattr(result, "files") else result
             grouped = classifier.group(files)
-            mover = FileMover(folder.path)
+            mover = FileMover(folder.path, log_manager=log_manager)
             moved, skipped = mover.move_files(files, classifier)
 
             print(f"\nMoved: {moved}, Skipped: {skipped}")

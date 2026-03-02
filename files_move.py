@@ -1,14 +1,14 @@
 from pathlib import Path
 import shutil
+from log_storage import LogManager
 
 #This class is responsible for moving files to their respective folders based on their categories. 
 #It ensures that the destination folders exist and handles naming conflicts by appending a number to the filename if a file with the same name already exists 
-from pathlib import Path
-import shutil
 
 class FileMover:
-    def __init__(self, base_folder: Path):
+    def __init__(self, base_folder: Path , log_manager: LogManager):
         self.base_folder = base_folder
+        self.log_manager = log_manager
 
     def ensure_folder(self, category: str) -> Path:
         destination = self.base_folder / category
@@ -40,13 +40,16 @@ class FileMover:
 
                 if f.parent.resolve() == dest_folder.resolve():
                     skipped += 1
+                    self.log_manager.log_skip(f, "already_in_destination")
                     continue
 
                 dst_path = self._safe_destination_path(dest_folder, f.name)
-                shutil.move(str(f), str(dst_path))
+                shutil.move(str(f), str(dst_path))             
+                self.log_manager.log_move(f, dst_path)  
                 moved += 1
 
-            except (PermissionError, OSError):
+            except (PermissionError, OSError) as e:
                 skipped += 1
+                self.log_manager.log_error(f, e)
 
         return moved, skipped
