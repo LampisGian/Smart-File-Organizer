@@ -1,6 +1,7 @@
 from pathlib import Path
 from dataclasses import dataclass
 from extension_classifier import FileClassifier
+from files_move import FileMover
 
 #This class is responsible for clearing the file path from symbols and finding the whole path in linux like systems with ~ symbol
 #and also validate that the path exists and is a directory. 
@@ -51,11 +52,15 @@ class App:
         folder = FolderPath(folder_input)
         scanner = FolderScanner(folder, recursive=recursive)
         classifier = FileClassifier()
-
+        
         try:
             result = scanner.scan()          
             files = result.files if hasattr(result, "files") else result
             grouped = classifier.group(files)
+            mover = FileMover(folder.path)
+            moved, skipped = mover.move_files(files, classifier)
+
+            print(f"\nMoved: {moved}, Skipped: {skipped}")
 
             print("\n=== Classification ===")
             for category, items in grouped.items():
