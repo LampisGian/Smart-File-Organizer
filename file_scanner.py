@@ -4,6 +4,7 @@ from extension_classifier import FileClassifier
 from files_move import FileMover
 from log_storage import LogManager
 from folder_menu import FolderMenu
+from undo_history import HistoryManager
 
 #This class is responsible for clearing the file path from symbols and finding the whole path in linux like systems with ~ symbol
 #and also validate that the path exists and is a directory. 
@@ -48,37 +49,60 @@ class FolderScanner:
 #it takes the folder path and the depth of the search and prints the results 
 class App:
     def run(self) -> None:
-        menu = FolderMenu()
-        selected = menu.prompt_folder()
-        if selected is None:
-            print("Bye!")
-            return
-
-        folder = FolderPath(str(selected))
-        recursive = input("Should it scan subfolders too? (y/n): ").strip().lower() == "y"
-
-        folder = FolderPath(str(selected))
-        scanner = FolderScanner(folder, recursive=recursive)
         classifier = FileClassifier()
-        log_manager = LogManager(Path("Logs") / "moves_logs.log")
-        try:
-            result = scanner.scan()          
-            files = result.files if hasattr(result, "files") else result
-            grouped = classifier.group(files)
-            mover = FileMover(folder.path, log_manager=log_manager)
-            moved, skipped = mover.move_files(files, classifier)
+        log_manager = LogManager(Path("logs") / "moves_logs.log")
+        history_manager = HistoryManager(Path("history") / "moved_files_history.json")
 
-            print(f"\nMoved: {moved}, Skipped: {skipped}")
+        while True:
+            menu = FolderMenu()
+            selected = menu.prompt_folder()
 
-            print("\n=== Classification ===")
-            for category, items in grouped.items():
-                print(f"\n{category} ({len(items)}):")
-                for f in items:
-                    print(f"  - {f.name}")
+            if selected is None:
+                print("Bye!")
+                return  
 
-        except Exception as e:
-            print("Error:", e)
+            recursive = input("Should it scan subfolders too? (y/n): ").strip().lower() == "y"
 
+            folder = FolderPath(str(selected))
+            scanner = FolderScanner(folder, recursive=recursive)
+            mover = FileMover(folder.path, log_manager, history_manager)
+
+            while True:
+                print("\n=== Actions Menu ===")
+                print("1) Organize now")
+                print("2) Undo last move")
+                print("3) Undo ALL moves")
+                print("4) Back to folder selection")
+
+                choice = input("Choose: ").strip()
+
+                if choice == "1":
+                    try:
+                        result = scanner.scan()
+                        files = result.files
+
+                        moved, skipped = mover.move_files(files, classifier)
+                        print(f"\nMoved: {moved}, Skipped: {skipped}")
+
+                    except Exception as e:
+                        print("Error:", e)
+
+                elif choice == "2":
+                    ok = mover.undo_last()
+                    if ok:
+                        print("Undo completed.")
+                    else:
+                        print("No moves to undo.")
+
+                elif choice == "3":
+                    undone = mover.undo_all()
+                    if undone == 0:
+                        print("No moves to undo.")
+                    else:
+                        print(f"Undo completed for {undone} moves.")
+
+                elif choice == "4":
+                    break
 
 if __name__ == "__main__":
     App().run()

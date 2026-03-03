@@ -92,3 +92,90 @@
 2026-03-02 20:03:08,546 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.pdf | reason=already_in_destination
 2026-03-02 20:03:08,546 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.txt | reason=already_in_destination
 2026-03-02 20:03:08,546 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.rtf | reason=already_in_destination
+2026-03-03 11:55:47,140 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Video/test.mp4 | reason=already_in_destination
+2026-03-03 11:55:47,142 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/test.gif | reason=already_in_destination
+2026-03-03 11:55:47,143 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/view.jpeg | reason=already_in_destination
+2026-03-03 11:55:47,143 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Spreadsheets/test.csv | reason=already_in_destination
+2026-03-03 11:55:47,143 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (1) (1) | reason=unknown_extension_keep_in_root
+2026-03-03 11:55:47,143 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (9) | reason=unknown_extension_keep_in_root
+2026-03-03 11:55:47,143 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store | reason=unknown_extension_keep_in_root
+2026-03-03 11:55:47,143 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (3) | reason=unknown_extension_keep_in_root
+2026-03-03 11:55:47,143 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (4) | reason=unknown_extension_keep_in_root
+2026-03-03 11:55:47,143 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (7) | reason=unknown_extension_keep_in_root
+2026-03-03 11:55:47,143 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (10) | reason=unknown_extension_keep_in_root
+2026-03-03 11:55:47,143 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (6) | reason=unknown_extension_keep_in_root
+2026-03-03 11:55:47,143 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (5) | reason=unknown_extension_keep_in_root
+2026-03-03 11:55:47,143 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (1) | reason=unknown_extension_keep_in_root
+2026-03-03 11:55:47,144 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (8) | reason=unknown_extension_keep_in_root
+2026-03-03 11:55:47,144 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (2) | reason=unknown_extension_keep_in_root
+2026-03-03 11:55:47,144 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test.mp3 | reason=already_in_destination
+2026-03-03 11:55:47,144 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test (1).mp3 | reason=already_in_destination
+2026-03-03 11:55:47,144 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Presentations/test.ppt | reason=already_in_destination
+2026-03-03 11:55:47,144 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.docx | reason=already_in_destination
+2026-03-03 11:55:47,144 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.pdf | reason=already_in_destination
+2026-03-03 11:55:47,144 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.txt | reason=already_in_destination
+2026-03-03 11:55:47,145 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.rtf | reason=already_in_destination
+2026-03-03 12:00:18,225 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.gif -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/test.gif
+2026-03-03 12:00:18,228 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.docx -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.docx
+2026-03-03 12:00:18,229 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/view.jpeg -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/view.jpeg
+2026-03-03 12:00:18,230 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/.DS_Store | reason=unknown_extension_keep_in_root
+2026-03-03 12:00:18,231 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.mp3 -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test.mp3
+2026-03-03 12:00:18,231 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.pdf -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.pdf
+2026-03-03 12:00:18,232 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test (1).mp3 -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test (1).mp3
+2026-03-03 12:00:18,233 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.txt -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.txt
+2026-03-03 12:00:18,235 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.rtf -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.rtf
+2026-03-03 12:00:18,236 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Video/test.mp4 | reason=already_in_destination
+2026-03-03 12:00:18,237 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Spreadsheets/test.csv | reason=already_in_destination
+2026-03-03 12:00:18,237 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (1) (1) | reason=unknown_extension_keep_in_root
+2026-03-03 12:00:18,237 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (9) | reason=unknown_extension_keep_in_root
+2026-03-03 12:00:18,237 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store | reason=unknown_extension_keep_in_root
+2026-03-03 12:00:18,237 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (3) | reason=unknown_extension_keep_in_root
+2026-03-03 12:00:18,237 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (4) | reason=unknown_extension_keep_in_root
+2026-03-03 12:00:18,237 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (7) | reason=unknown_extension_keep_in_root
+2026-03-03 12:00:18,237 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (10) | reason=unknown_extension_keep_in_root
+2026-03-03 12:00:18,237 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (6) | reason=unknown_extension_keep_in_root
+2026-03-03 12:00:18,237 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (5) | reason=unknown_extension_keep_in_root
+2026-03-03 12:00:18,237 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (1) | reason=unknown_extension_keep_in_root
+2026-03-03 12:00:18,237 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (8) | reason=unknown_extension_keep_in_root
+2026-03-03 12:00:18,237 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (2) | reason=unknown_extension_keep_in_root
+2026-03-03 12:00:18,238 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Presentations/test.ppt | reason=already_in_destination
+2026-03-03 12:00:28,072 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.rtf -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.rtf
+2026-03-03 12:00:41,434 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.txt -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.txt
+2026-03-03 12:00:44,609 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test (1).mp3 -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test (1).mp3
+2026-03-03 12:00:59,723 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.pdf -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.pdf
+2026-03-03 12:01:00,242 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test.mp3 -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.mp3
+2026-03-03 12:01:00,676 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/view.jpeg -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/view.jpeg
+2026-03-03 12:01:01,350 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.docx -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.docx
+2026-03-03 12:01:01,751 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/test.gif -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.gif
+2026-03-03 12:04:15,330 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.gif -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/test.gif
+2026-03-03 12:04:15,335 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.docx -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.docx
+2026-03-03 12:04:15,336 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/view.jpeg -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/view.jpeg
+2026-03-03 12:04:15,336 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/.DS_Store | reason=unknown_extension_keep_in_root
+2026-03-03 12:04:15,337 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.mp3 -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test.mp3
+2026-03-03 12:04:15,338 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.pdf -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.pdf
+2026-03-03 12:04:15,339 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test (1).mp3 -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test (1).mp3
+2026-03-03 12:04:15,340 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.txt -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.txt
+2026-03-03 12:04:15,341 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.rtf -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.rtf
+2026-03-03 12:04:15,342 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Video/test.mp4 | reason=already_in_destination
+2026-03-03 12:04:15,342 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Spreadsheets/test.csv | reason=already_in_destination
+2026-03-03 12:04:15,342 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (1) (1) | reason=unknown_extension_keep_in_root
+2026-03-03 12:04:15,342 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (9) | reason=unknown_extension_keep_in_root
+2026-03-03 12:04:15,342 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store | reason=unknown_extension_keep_in_root
+2026-03-03 12:04:15,342 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (3) | reason=unknown_extension_keep_in_root
+2026-03-03 12:04:15,342 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (4) | reason=unknown_extension_keep_in_root
+2026-03-03 12:04:15,342 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (7) | reason=unknown_extension_keep_in_root
+2026-03-03 12:04:15,342 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (10) | reason=unknown_extension_keep_in_root
+2026-03-03 12:04:15,342 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (6) | reason=unknown_extension_keep_in_root
+2026-03-03 12:04:15,342 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (5) | reason=unknown_extension_keep_in_root
+2026-03-03 12:04:15,342 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (1) | reason=unknown_extension_keep_in_root
+2026-03-03 12:04:15,342 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (8) | reason=unknown_extension_keep_in_root
+2026-03-03 12:04:15,342 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (2) | reason=unknown_extension_keep_in_root
+2026-03-03 12:04:15,343 | INFO | SKIPPED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Presentations/test.ppt | reason=already_in_destination
+2026-03-03 12:04:28,308 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.rtf -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.rtf
+2026-03-03 12:04:30,090 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.txt -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.txt
+2026-03-03 12:04:33,682 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test (1).mp3 -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test (1).mp3
+2026-03-03 12:04:33,683 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.pdf -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.pdf
+2026-03-03 12:04:33,684 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test.mp3 -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.mp3
+2026-03-03 12:04:33,685 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/view.jpeg -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/view.jpeg
+2026-03-03 12:04:33,686 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.docx -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.docx
+2026-03-03 12:04:33,688 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/test.gif -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.gif
