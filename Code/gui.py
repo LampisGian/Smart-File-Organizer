@@ -447,15 +447,27 @@ class SmartOrganizerGUI:
             self.toast.show("No folder selected", "Please select a folder first.", kind="error")
             return
 
-        mover = FileMover(Path(self.selected_path), self.log_manager, self.history_manager)
-        count = mover.undo_all()
-        if count > 0:
-            self.toast.show("Undo completed", f"Reverted {count} moves.", "success")
-            self.status.set(f"Undo completed | Reverted: {count}", "success")
-        else:
-            self.toast.show("Nothing to undo", "There are no moves available.", "warn")
-            self.status.set("Nothing to undo", "warn")
+        self.undo_all_btn.set_enabled(False)
+        self.undo_last_btn.set_enabled(False)
 
+        def worker():
+            mover = FileMover(Path(self.selected_path), self.log_manager, self.history_manager)
+            count = mover.undo_all()
+
+            def done():
+                self.undo_all_btn.set_enabled(True)
+                self.undo_last_btn.set_enabled(True)
+                if count > 0:
+                    self.toast.show("Undo completed", f"Reverted {count} moves.", "success")
+                    self.status.set(f"Undo completed | Reverted: {count}", "success")
+                else:
+                    self.toast.show("Nothing to undo", "There are no moves available.", "warn")
+                    self.status.set("Nothing to undo", "warn")
+
+            self.root.after(0, done)
+
+        threading.Thread(target=worker, daemon=True).start()
+        
     def run(self):
         self.root.mainloop()
 
