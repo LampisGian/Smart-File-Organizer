@@ -21,7 +21,7 @@ There are two ways to run the application:
 
 ## User Interface Overview (Screenshots)
 
-![Screenshot](Screenshots/main_screen )
+![Screenshot](Screenshots/main_screen.png)
 
 The application supports **drag-and-drop** functionality using the `tkinterdnd2` Python library and prompts the user to drop a folder into the designated area. Alternatively, users can select a folder manually via the **Browse** button.
 
