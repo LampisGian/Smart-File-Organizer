@@ -3,21 +3,6 @@ from pathlib import Path
 import tkinter as tk
 from tkinter import filedialog
 from pathlib import Path
-
-def app_data_dir() -> Path:
-    base = Path.home() / "Library" / "Application Support" / "Smart File Organizer"
-    base.mkdir(parents=True, exist_ok=True)
-    return base
-
-# Optional drag & drop support
-try:
-    from tkinterdnd2 import DND_FILES, TkinterDnD
-    DND_AVAILABLE = True
-except Exception:
-    DND_AVAILABLE = False
-    TkinterDnD = tk.Tk
-    DND_FILES = None
-
 from file_scanner import FolderPath, FolderScanner
 from extension_classifier import FileClassifier
 from log_storage import LogManager
@@ -25,15 +10,61 @@ from undo_history import HistoryManager
 from files_move import FileMover
 
 
+def app_data_dir() -> Path:
+    base = Path.home() / "Library" / "Application Support" / "Smart File Organizer"
+    base.mkdir(parents=True, exist_ok=True)
+    return base
+try:
+    from tkinterdnd2 import DND_FILES, TkinterDnD # Option for drag and drop support with the library tkinterdnd2.
+    DND_AVAILABLE = True
+except Exception:
+    DND_AVAILABLE = False
+    TkinterDnD = tk.Tk
+    DND_FILES = None
+
+#This class is responsible for the notifications that appear in the top right corner infroming the user about the status 
 class Toast:
-    """Small modern notifications (top-right)."""
     def __init__(self, root: tk.Tk):
         self.root = root
 
+        self.w = 400
+        self.h = 92
+        self.pad = 16
+
+        self.container = tk.Frame(
+            root,
+            bg="#111827",
+            highlightbackground="#60a5fa",
+            highlightthickness=2
+        )
+
+        self.title_lbl = tk.Label(
+            self.container, text="",
+            bg="#111827", fg="#e5f1ff",
+            font=("Helvetica", 12, "bold"),
+            anchor="w"
+        )
+        self.title_lbl.pack(fill="x", padx=12, pady=(10, 2))
+
+        self.msg_lbl = tk.Label(
+            self.container, text="",
+            bg="#111827", fg="#e5f1ff",
+            font=("Helvetica", 10),
+            justify="left", wraplength=self.w - 24,
+            anchor="w"
+        )
+        self.msg_lbl.pack(fill="x", padx=12, pady=(0, 10))
+
+        self._hide_after_id = None
+        self.container.place_forget()  
+
     def show(self, title: str, message: str, kind: str = "info", duration_ms: int = 2500):
-        win = tk.Toplevel(self.root)
-        win.overrideredirect(True)
-        win.attributes("-topmost", True)
+        if self._hide_after_id is not None:
+            try:
+                self.root.after_cancel(self._hide_after_id)
+            except Exception:
+                pass
+            self._hide_after_id = None
 
         if kind == "success":
             bg, border, fg = "#0f2a1b", "#2ecc71", "#eafff3"
@@ -44,26 +75,25 @@ class Toast:
         else:
             bg, border, fg = "#111827", "#60a5fa", "#e5f1ff"
 
-        frame = tk.Frame(win, bg=bg, highlightbackground=border, highlightthickness=2)
-        frame.pack(fill="both", expand=True)
-
-        tk.Label(frame, text=title, bg=bg, fg=fg, font=("Helvetica", 12, "bold")).pack(
-            anchor="w", padx=12, pady=(10, 2)
-        )
-        tk.Label(frame, text=message, bg=bg, fg=fg, font=("Helvetica", 10),
-                 wraplength=340, justify="left").pack(anchor="w", padx=12, pady=(0, 10))
+        self.container.config(bg=bg, highlightbackground=border)
+        self.title_lbl.config(text=title, bg=bg, fg=fg)
+        self.msg_lbl.config(text=message, bg=bg, fg=fg)
 
         self.root.update_idletasks()
-        w, h = 400, 92
-        x = self.root.winfo_x() + self.root.winfo_width() - w - 20
-        y = self.root.winfo_y() + 20
-        win.geometry(f"{w}x{h}+{x}+{y}")
+        self.container.place(
+            relx=1.0, x=-(self.pad), y=self.pad,
+            anchor="ne",
+            width=self.w, height=self.h
+        )
+        self.container.lift() 
+        self._hide_after_id = self.root.after(duration_ms, self.hide)
 
-        win.after(duration_ms, win.destroy)
+    def hide(self):
+        self.container.place_forget()
+        self._hide_after_id = None
 
-
+#This class is responsible for the status of the application with matching colours to the proccess
 class StatusBar(tk.Frame):
-    """Bottom status line with color."""
     def __init__(self, master):
         super().__init__(master, bg="#0b1220")
         self.var = tk.StringVar(value="Status: Idle")
@@ -82,19 +112,16 @@ class StatusBar(tk.Frame):
     def set(self, text: str, kind: str = "info"):
         self.var.set(text)
         if kind == "success":
-            self.label.config(fg="#2ecc71")  # green
+            self.label.config(fg="#2ecc71")  
         elif kind == "error":
-            self.label.config(fg="#e74c3c")  # red
+            self.label.config(fg="#e74c3c")  
         elif kind == "warn":
-            self.label.config(fg="#f1c40f")  # yellow
+            self.label.config(fg="#f1c40f")  
         else:
-            self.label.config(fg="#e5e7eb")  # neutral
+            self.label.config(fg="#e5e7eb")  
 
-
+#This class is responsiblr for the main buttons style and behaviour, it is used for the start, stop and undo buttons in the UI
 class ColorButton(tk.Frame):
-    """
-    Canvas-based button (stable colors on macOS, even when focused).
-    """
     def __init__(self, master, text, command, bg, hover_bg, fg="#ffffff", width=140, height=42):
         super().__init__(master, bg=master["bg"])
         self.command = command
@@ -118,12 +145,11 @@ class ColorButton(tk.Frame):
             font=("Helvetica", 11, "bold")
         )
 
-        # bindings
+        #Using cnavas logic for hover and click effects in order to be stable 
         self.canvas.bind("<Enter>", self._on_enter)
         self.canvas.bind("<Leave>", self._on_leave)
         self.canvas.bind("<Button-1>", self._on_click)
 
-        # also bind for objects
         self.canvas.tag_bind(self.rect, "<Enter>", self._on_enter)
         self.canvas.tag_bind(self.rect, "<Leave>", self._on_leave)
         self.canvas.tag_bind(self.rect, "<Button-1>", self._on_click)
@@ -159,15 +185,15 @@ class ColorButton(tk.Frame):
         if self.enabled and callable(self.command):
             self.command()
 
-
+#This class is responsible for handling the main GUI managing all the user interactions and buttons 
 class SmartOrganizerGUI:
     def __init__(self):
         self.root = TkinterDnD.Tk() if DND_AVAILABLE else tk.Tk()
         self.root.title("Smart File Organizer")
         self.root.geometry("860x520")
+        self.root.resizable(False, False)
         self.root.minsize(820, 480)
 
-        # Theme
         self.bg = "#0b1220"
         self.card = "#111827"
         self.card2 = "#0f172a"
@@ -178,25 +204,21 @@ class SmartOrganizerGUI:
 
         self.root.configure(bg=self.bg)
 
-        # State
         self.selected_path = ""
         self.recursive_var = tk.BooleanVar(value=False)
         self.stop_event = threading.Event()
         self.worker_thread: threading.Thread | None = None
 
-        # Core components
         self.classifier = FileClassifier()
         data_dir = app_data_dir()
         self.log_manager = LogManager(data_dir / "moves_logs.log")
         self.history_manager = HistoryManager(data_dir / "moved_files_history.json")
 
-        # UI helpers
         self.toast = Toast(self.root)
 
         self._build_ui()
 
     def _build_ui(self):
-        # Header
         header = tk.Frame(self.root, bg=self.bg)
         header.pack(fill="x", padx=18, pady=(14, 8))
 
@@ -211,7 +233,6 @@ class SmartOrganizerGUI:
             font=("Helvetica", 10),
         ).pack(side="left", padx=14)
 
-        # Main layout: left (drop) + right (controls)
         main = tk.Frame(self.root, bg=self.bg)
         main.pack(fill="both", expand=True, padx=18, pady=10)
 
@@ -221,7 +242,6 @@ class SmartOrganizerGUI:
         right = tk.Frame(main, bg=self.bg)
         right.pack(side="left", fill="both", expand=True)
 
-        # Small square drop zone
         drop_wrap = tk.Frame(left, bg=self.card, highlightbackground=self.border, highlightthickness=1)
         drop_wrap.pack(pady=(0, 10))
 
@@ -254,7 +274,6 @@ class SmartOrganizerGUI:
             self.drop.drop_target_register(DND_FILES)
             self.drop.dnd_bind("<<Drop>>", self._on_drop)
 
-        # Browse button under drop zone
         browse_btn = ColorButton(
             left, "📂 Browse…", self.browse,
             bg="#334155", hover_bg="#475569",
@@ -262,14 +281,12 @@ class SmartOrganizerGUI:
         )
         browse_btn.pack(fill="x")
 
-        # Right side: controls card
         card = tk.Frame(right, bg=self.card, highlightbackground=self.border, highlightthickness=1)
         card.pack(fill="both", expand=True)
 
         tk.Label(card, text="Controls", bg=self.card, fg=self.text,
                  font=("Helvetica", 13, "bold")).pack(anchor="w", padx=14, pady=(12, 8))
 
-        # Selected path (bigger)
         self.path_big = tk.Label(
             card,
             text="Selected: (none)",
@@ -282,7 +299,6 @@ class SmartOrganizerGUI:
         )
         self.path_big.pack(fill="x", padx=14, pady=(0, 12))
 
-        # Options
         options = tk.Frame(card, bg=self.card)
         options.pack(fill="x", padx=14, pady=(0, 10))
 
@@ -298,7 +314,6 @@ class SmartOrganizerGUI:
             font=("Helvetica", 11),
         ).pack(side="left")
 
-        # Buttons grid (nice layout)
         btn_grid = tk.Frame(card, bg=self.card)
         btn_grid.pack(fill="x", padx=14, pady=(10, 12))
 
@@ -330,7 +345,6 @@ class SmartOrganizerGUI:
         )
         self.undo_all_btn.grid(row=1, column=1, padx=(0, 10), pady=(0, 0), sticky="w")
 
-        # Counters (no progress bar)
         counters = tk.Frame(card, bg=self.card)
         counters.pack(fill="x", padx=14, pady=(0, 12))
 
@@ -342,16 +356,13 @@ class SmartOrganizerGUI:
         tk.Label(counters, textvariable=self.moved_var, bg=self.card, fg=self.muted, font=("Helvetica", 10)).pack(side="left", padx=16)
         tk.Label(counters, textvariable=self.skipped_var, bg=self.card, fg=self.muted, font=("Helvetica", 10)).pack(side="left", padx=16)
 
-        # Hint
         hint = "Tip: Start organizes files. Stop requests a graceful stop. Undo works only after moves."
         tk.Label(card, text=hint, bg=self.card, fg=self.muted, font=("Helvetica", 10),
                  justify="left", wraplength=520).pack(anchor="w", padx=14, pady=(0, 12))
 
-        # Status bar
         self.status = StatusBar(self.root)
         self.status.pack(fill="x", padx=10, pady=(0, 10))
 
-    # ---------- Folder selection ----------
     def _set_folder(self, path: str):
         self.selected_path = path
         self.path_label.config(text=path, fg=self.text)
@@ -369,7 +380,6 @@ class SmartOrganizerGUI:
         else:
             self.toast.show("Invalid drop", "Please drop a folder (not a file).", kind="error")
 
-    # ---------- Actions ----------
     def start(self):
         if not self.selected_path:
             self.toast.show("No folder selected", "Please browse or drop a folder first.", kind="error")
@@ -382,7 +392,6 @@ class SmartOrganizerGUI:
         self.stop_event.clear()
         self.status.set("Status: Organizing...", "info")
 
-        # reset counters
         self.scanned_var.set("Scanned: 0")
         self.moved_var.set("Moved: 0")
         self.skipped_var.set("Skipped: 0")
