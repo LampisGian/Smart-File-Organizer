@@ -1,23 +1,30 @@
 # Smart file organizer
 
 ## Description
-Automatically sort files in a folder into subfolders based on extension or rules.
+The application automatically organizes files by their extension and creates appropriately named folders for each category. After identifying the file type, it moves each file into its corresponding folder, resulting in a clean and structured directory layout.
+
+In addition to basic categorization, the app supports simple search within a selected folder and an optional recursive mode that scans and sorts files inside subfolders as well. It also includes a user-friendly GUI with drag-and-drop support, allowing users to quickly drop a folder into the interface and start organizing with minimal effort.
 
 ## Getting Started
-1. Clone this repository or download the files.
-2. Install required packages if necessary.
+There are two ways to run the application:
 
-Keep in mind that the code must be written in OOP.
+1. **macOS app (.app)**
+   - Download **Smart File Organizer.zip**
+   - Unzip the file
+   - Open the generated **.app** to launch the application directly on macOS
 
-## Tasks
-- Understand how file paths work. Write code to scan files in a folder.
-- Classify files by extension (e.g., .jpg, .pdf, etc.).
-- Create destination folders and move files using `shutil.move()`.
-- Add logging of moved files (source, destination, time).
-- Add menu to let user choose which folder to organize.
-- Add undo function by keeping a “moved files” history.
-- Add a GUI using tkinter: folder selection and start/stop button.
-- Add error handling (conflicting names, permission issues).
-- Final testing. Create README with instructions and screenshots. Submit as Git repo.
+2. **Run from source (Python)**
+   - Download (or clone) the full project folder
+   - Open a terminal in the project directory
+   - Run the GUI script:
+     - `python gui.py` or `python3 gui.py` (depending on the Python version installed on your system)
 
-## Estimated time to work 2 weeks
+## User Interface Overview (Screenshots)
+
+![Screenshot](Screenshots/main_screen )
+
+The application supports **drag-and-drop** functionality using the `tkinterdnd2` Python library and prompts the user to drop a folder into the designated area. Alternatively, users can select a folder manually via the **Browse** button.
+
+On the right side of the interface, the **selected folder path** is displayed, along with an option to enable or disable **recursive** scanning (to include subfolders). The main controls include the buttons **Start**, **Stop**, **Undo Last**, and **Undo All**.
+
+At the bottom of the window, the app displays **live statistics** about the sorting process, such as the number of files **moved**, **skipped**, and **scanned**. Finally, the **notification center** in the bottom-right corner shows real-time updates about file moves and other actions.
