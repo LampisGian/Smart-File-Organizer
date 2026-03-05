@@ -50,4 +50,6 @@ These notifications inform you about:
 - Successful undo actions (undo last / undo all)
 - Warnings or errors during the process
 
-![Screenshot](Screenshots/notifygreen.png)
+| Success | Warning |
+|---|---|---|
+| ![](Screenshots/notifygreen.png) | ![](Screenshots/notifyyellow.png) |
