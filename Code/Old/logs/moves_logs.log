@@ -322,3 +322,39 @@
 2026-03-03 12:43:49,082 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/view.jpeg -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/view.jpeg
 2026-03-03 12:43:49,083 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.docx -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.docx
 2026-03-03 12:43:49,083 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/test.gif -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.gif
+2026-03-05 12:43:03,244 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.gif -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/test.gif
+2026-03-05 12:43:03,248 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.docx -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.docx
+2026-03-05 12:43:03,249 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/view.jpeg -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/view.jpeg
+2026-03-05 12:43:03,249 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test copy.pdf -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test copy.pdf
+2026-03-05 12:43:03,250 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/.DS_Store -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (11)
+2026-03-05 12:43:03,251 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.mp3 -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test.mp3
+2026-03-05 12:43:03,251 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test copy.rtf -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test copy.rtf
+2026-03-05 12:43:03,252 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test copy.txt -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test copy.txt
+2026-03-05 12:43:03,253 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/view copy.jpeg -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/view copy.jpeg
+2026-03-05 12:43:03,254 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.pdf -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.pdf
+2026-03-05 12:43:03,255 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test (1).mp3 -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test (1).mp3
+2026-03-05 12:43:03,255 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test copy.docx -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test copy.docx
+2026-03-05 12:43:03,258 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test (1) copy.mp3 -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test (1) copy.mp3
+2026-03-05 12:43:03,258 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test copy.gif -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/test copy.gif
+2026-03-05 12:43:03,259 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.txt -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.txt
+2026-03-05 12:43:03,259 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.rtf -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.rtf
+2026-03-05 12:43:03,260 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/.DS_Store (1) -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (1) (2)
+2026-03-05 12:43:03,261 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test copy.mp3 -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test copy.mp3
+2026-03-05 12:43:07,259 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test copy.mp3 -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test copy.mp3
+2026-03-05 12:43:07,260 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (1) (2) -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/.DS_Store (1)
+2026-03-05 12:43:07,261 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.rtf -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.rtf
+2026-03-05 12:43:07,261 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.txt -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.txt
+2026-03-05 12:43:07,262 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/test copy.gif -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test copy.gif
+2026-03-05 12:43:07,262 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test (1) copy.mp3 -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test (1) copy.mp3
+2026-03-05 12:43:07,263 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test copy.docx -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test copy.docx
+2026-03-05 12:43:07,263 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test (1).mp3 -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test (1).mp3
+2026-03-05 12:43:07,263 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.pdf -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.pdf
+2026-03-05 12:43:07,264 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/view copy.jpeg -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/view copy.jpeg
+2026-03-05 12:43:07,265 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test copy.txt -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test copy.txt
+2026-03-05 12:43:07,265 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test copy.rtf -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test copy.rtf
+2026-03-05 12:43:07,266 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Audio/test.mp3 -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.mp3
+2026-03-05 12:43:07,266 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Other/.DS_Store (11) -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/.DS_Store
+2026-03-05 12:43:07,267 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test copy.pdf -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test copy.pdf
+2026-03-05 12:43:07,267 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/view.jpeg -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/view.jpeg
+2026-03-05 12:43:07,267 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Documents/test.docx -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.docx
+2026-03-05 12:43:07,268 | INFO | MOVED | /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/Images/test.gif -> /Users/lampis/Documents/GitHub/Smart-File-Organizer/Test/test.gif
